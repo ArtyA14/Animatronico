@@ -13,11 +13,11 @@ set "PYTHONIOENCODING=utf-8"
 cd /d "%~dp0"
 
 rem --- Mandibula opcional (SG90 en ESP32) ---
-rem  Descomenta y ajusta el COM para activarla. Guia: docs\MANDIBULA.md
-rem set "SPRINGTRAP_JAW=1"
-rem set "SPRINGTRAP_JAW_PORT=COM5"
-rem set "SPRINGTRAP_JAW_MIN=10"
-rem set "SPRINGTRAP_JAW_MAX=60"
+rem  Guia: docs\MANDIBULA.md
+set "SPRINGTRAP_JAW=1"
+set "SPRINGTRAP_JAW_PORT=COM6"
+set "SPRINGTRAP_JAW_MIN=10"
+set "SPRINGTRAP_JAW_MAX=60"
 
 rem --- Verificar entorno virtual ---
 set "PY=%~dp0.venv\Scripts\python.exe"

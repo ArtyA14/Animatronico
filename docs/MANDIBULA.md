@@ -158,7 +158,8 @@ set SPRINGTRAP_JAW_MAX=60
 Springtrap.bat
 ```
 
-También puedes dejarlas fijas en `Springtrap.bat` (hay un bloque comentado).
+También puedes dejarlas fijas en `Springtrap.bat`. **Ya vienen activadas**
+para `COM6`; si cambias de puerto USB, edita esas cuatro líneas en el `.bat`.
 
 ---
 

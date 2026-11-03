@@ -194,6 +194,9 @@ set SPRINGTRAP_JAW_PORT=COM5
 Springtrap.bat
 ```
 
+> `Springtrap.bat` ya trae la mandíbula activada en **COM6**. Si tu placa
+> aparece en otro puerto, cambia esa línea en el `.bat`.
+
 ## Problemas conocidos
 
 **`Error processing file 'D:/a/piper1-gpl/...phontab'`** — bug de Piper en
