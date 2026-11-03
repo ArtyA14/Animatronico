@@ -1,0 +1,13 @@
+faster-whisper>=1.2
+piper-tts>=1.8
+sounddevice>=0.5
+soundfile>=0.14
+numpy>=1.26
+requests>=2.32
+rich>=15.0
+pyserial>=3.5
+
+# CUDA para faster-whisper en Windows. Los wheels incluyen las DLLs; bootstrap.py
+# se las anuncia a CTranslate2 con os.add_dll_directory.
+nvidia-cudnn-cu12>=9; sys_platform == "win32"
+nvidia-cublas-cu12>=12; sys_platform == "win32"
