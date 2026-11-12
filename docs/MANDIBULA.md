@@ -62,7 +62,7 @@ El SG90 gira 180°, pero la mandíbula no debe usarlos todos. En el sketch:
 
 ```cpp
 const int ANGLE_MIN = 10;   // cerrada
-const int ANGLE_MAX = 60;   // abierta
+const int ANGLE_MAX = 36;   // abierta
 ```
 
 Ajusta esos números a tu montaje **antes de atornillar nada**: si el servo
@@ -124,7 +124,7 @@ empuja contra un tope, zumba, se calienta y puede romper el engranaje.
    ```
 
 4. Escribe `10` y Enter → mandíbula cerrada.
-5. Escribe `60` y Enter → mandíbula abierta.
+5. Escribe `36` y Enter → mandíbula abierta.
 
 Si esto funciona, **el hardware y el firmware están listos**. Cierra el Serial
 Monitor antes de usar Python: el puerto solo lo puede abrir un programa a la vez.
@@ -154,7 +154,7 @@ Esto instala `pyserial` (ya está en `requirements.txt`).
 set SPRINGTRAP_JAW=1
 set SPRINGTRAP_JAW_PORT=COM5
 set SPRINGTRAP_JAW_MIN=10
-set SPRINGTRAP_JAW_MAX=60
+set SPRINGTRAP_JAW_MAX=36
 Springtrap.bat
 ```
 
@@ -202,26 +202,26 @@ Todas estas variables se pueden poner como variables de entorno o editar en
 | Variable | Por defecto | Qué hace |
 |---|---|---|
 | `SPRINGTRAP_JAW_MIN` | `10` | ángulo cerrado |
-| `SPRINGTRAP_JAW_MAX` | `60` | ángulo abierto |
-| `SPRINGTRAP_JAW_FLOOR` | `-45` | dBFS que cuenta como silencio |
-| `SPRINGTRAP_JAW_CEIL` | `-12` | dBFS que cuenta como voz fuerte |
-| `SPRINGTRAP_JAW_GAMMA` | `0.7` | <1 abre más en niveles medios; >1 abre menos |
-| `SPRINGTRAP_JAW_ATTACK` | `0.6` | rapidez al abrir (0–1) |
-| `SPRINGTRAP_JAW_RELEASE` | `0.15` | rapidez al cerrar (0–1) |
-| `SPRINGTRAP_JAW_SLEW` | `700` | grados por segundo máximos |
-| `SPRINGTRAP_JAW_DEADBAND` | `2` | grados de histéresis (subir si zumba) |
+| `SPRINGTRAP_JAW_MAX` | `36` | ángulo abierto |
+| `SPRINGTRAP_JAW_FLOOR` | `-38` | dBFS que cuenta como silencio |
+| `SPRINGTRAP_JAW_CEIL` | `-18` | dBFS que cuenta como voz fuerte |
+| `SPRINGTRAP_JAW_GAMMA` | `0.55` | <1 abre más en niveles medios; >1 abre menos |
+| `SPRINGTRAP_JAW_ATTACK` | `0.9` | rapidez al abrir (0–1) |
+| `SPRINGTRAP_JAW_RELEASE` | `0.35` | rapidez al cerrar (0–1) |
+| `SPRINGTRAP_JAW_SLEW` | `1200` | grados por segundo máximos |
+| `SPRINGTRAP_JAW_DEADBAND` | `1` | grados de histéresis (subir si zumba) |
 | `SPRINGTRAP_JAW_HEARTBEAT` | `0.75` | s entre reenvíos del mismo ángulo |
 
 ### Diagnóstico rápido
 
 | Síntoma | Ajuste |
 |---|---|
-| Abre muy poco | baja `JAW_CEIL` (p. ej. `-18`) o sube `JAW_GAMMA` |
+| Abre muy poco | baja `JAW_CEIL` (p. ej. `-22`) o sube `JAW_GAMMA` |
 | Se queda abierta en silencio | sube `JAW_FLOOR` (p. ej. `-35`) |
-| Abre y cierra a golpes | baja `JAW_ATTACK` a `0.4` y `JAW_SLEW` a `400` |
-| Tiembla quieta | sube `JAW_DEADBAND` a `3`–`4` |
+| Abre y cierra a golpes | baja `JAW_ATTACK` a `0.6` y `JAW_SLEW` a `600` |
+| Tiembla quieta | sube `JAW_DEADBAND` a `2`–`3` |
 | Va al revés | pon `const bool INVERT = true;` en el `.ino` y vuelve a subir |
-| Se mueve entre frases | sube `JAW_RELEASE` a `0.25` |
+| Se mueve entre frases | baja `JAW_RELEASE` a `0.25` |
 
 `JAW_RELEASE` bajo es lo que evita que la boca “castañetee” cuando el
 reproductor manda un nivel 0 entre frase y frase.

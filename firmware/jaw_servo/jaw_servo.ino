@@ -22,7 +22,7 @@
 // ---------------------------------------------------------------- ajustes ---
 const int SERVO_PIN = 13;        // GPIO de la señal naranja del SG90
 const int ANGLE_MIN = 10;        // mandíbula cerrada (ajusta con el montaje)
-const int ANGLE_MAX = 60;        // mandíbula abierta  (no pases de ~60)
+const int ANGLE_MAX = 36;        // mandíbula abierta  (no pases de ~60)
 const unsigned long WATCHDOG_MS = 2000;
 
 // Si el servo gira al revés respecto a la boca, pon esto en true y vuelve a

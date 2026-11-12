@@ -152,14 +152,14 @@ springtrap/
 | `SPRINGTRAP_VAD_MULT` | `4.0` | cuántas veces el ruido de fondo debe superarse |
 | `SPRINGTRAP_MIC` | *(auto)* | índice o trozo del nombre del micro de entrada |
 | `SPRINGTRAP_OUTPUT` | *(defecto)* | índice de dispositivo de salida |
-| `SPRINGTRAP_JAW` | `0` | `1` activa la mandíbula (SG90 en ESP32) |
+| `SPRINGTRAP_JAW` | `0` | `1` activa la mandíbula (servo en ESP32) |
 | `SPRINGTRAP_JAW_PORT` | `/dev/ttyUSB0` | puerto serie; en Windows `COM5`, `COM6`… |
-| `SPRINGTRAP_JAW_MIN` / `MAX` | `10` / `60` | ángulo cerrado / abierto |
-| `SPRINGTRAP_JAW_FLOOR` / `CEIL` | `-45` / `-12` | dBFS de silencio / voz fuerte |
-| `SPRINGTRAP_JAW_GAMMA` | `0.7` | curva de apertura |
-| `SPRINGTRAP_JAW_ATTACK` / `RELEASE` | `0.6` / `0.15` | suavizado al abrir / cerrar |
-| `SPRINGTRAP_JAW_SLEW` | `700` | grados por segundo máximos |
-| `SPRINGTRAP_JAW_DEADBAND` | `2` | histéresis en grados |
+| `SPRINGTRAP_JAW_MIN` / `MAX` | `10` / `36` | ángulo cerrado / abierto |
+| `SPRINGTRAP_JAW_FLOOR` / `CEIL` | `-38` / `-18` | dBFS de silencio / voz fuerte |
+| `SPRINGTRAP_JAW_GAMMA` | `0.55` | curva de apertura |
+| `SPRINGTRAP_JAW_ATTACK` / `RELEASE` | `0.9` / `0.35` | suavizado al abrir / cerrar |
+| `SPRINGTRAP_JAW_SLEW` | `1200` | grados por segundo máximos |
+| `SPRINGTRAP_JAW_DEADBAND` | `1` | histéresis en grados |
 | `SPRINGTRAP_JAW_HEARTBEAT` | `0.75` | s entre reenvíos del mismo ángulo |
 
 Ejemplo:
@@ -190,7 +190,7 @@ La mandíbula sigue el nivel de la voz: `Player` entrega el RMS cada 50 ms y
 
 ```bat
 set SPRINGTRAP_JAW=1
-set SPRINGTRAP_JAW_PORT=COM5
+set SPRINGTRAP_JAW_PORT=COM6
 Springtrap.bat
 ```
 

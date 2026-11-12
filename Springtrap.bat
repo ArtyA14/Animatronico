@@ -12,12 +12,19 @@ set "PYTHONIOENCODING=utf-8"
 
 cd /d "%~dp0"
 
-rem --- Mandibula opcional (SG90 en ESP32) ---
+rem --- Mandibula (servo en ESP32) ---
 rem  Guia: docs\MANDIBULA.md
 set "SPRINGTRAP_JAW=1"
 set "SPRINGTRAP_JAW_PORT=COM6"
 set "SPRINGTRAP_JAW_MIN=10"
-set "SPRINGTRAP_JAW_MAX=60"
+set "SPRINGTRAP_JAW_MAX=36"
+set "SPRINGTRAP_JAW_FLOOR=-38"
+set "SPRINGTRAP_JAW_CEIL=-18"
+set "SPRINGTRAP_JAW_GAMMA=0.55"
+set "SPRINGTRAP_JAW_ATTACK=0.9"
+set "SPRINGTRAP_JAW_RELEASE=0.35"
+set "SPRINGTRAP_JAW_SLEW=1200"
+set "SPRINGTRAP_JAW_DEADBAND=1"
 
 rem --- Verificar entorno virtual ---
 set "PY=%~dp0.venv\Scripts\python.exe"
